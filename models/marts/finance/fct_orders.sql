@@ -11,17 +11,26 @@ with
         select * from {{ ref('stg_stripe__payments') }}
     )
 
-    , orders_with_amount as (
+    , orders_payments as (
+
+        select
+            order_id
+            , sum (case when status = 'success' then amount end) as amount
+
+        from payments
+        group by order_id
+    )
+
+    , final as (
 
         select
             orders.order_id
             , orders.customer_id
-            , payments.amount
+            , orders.order_date
+            , coalesce (orders_payments.amount, 0) as amount
 
         from orders
-
-        left join payments using (order_id)
-
+        left join orders_payments using (order_id)
     )
 
-select * from orders_with_amount
+select * from final
