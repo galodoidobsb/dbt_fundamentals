@@ -2,5 +2,9 @@ sources:
   - name: stripe
     database: raw
     schema: stripe
+    config:
+      freshness:
+        warn_after: {count: 72, period: hour}
+        error_after: {count: 30, period: day}
     tables:
       - name: payment
