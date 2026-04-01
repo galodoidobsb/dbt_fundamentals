@@ -13,6 +13,7 @@ models:
     description: One order per row
     columns:
       - name: order_id
+        description: Primary key to identify an order
         data_tests:
           - unique
           - not_null
