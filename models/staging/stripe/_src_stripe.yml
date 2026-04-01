@@ -1,5 +1,6 @@
 sources:
   - name: stripe
+    description: A clone of the PostgreSQL database
     database: raw
     schema: stripe
     config:
@@ -8,3 +9,4 @@ sources:
         error_after: {count: 30, period: day}
     tables:
       - name: payment
+        description: Raw payments data

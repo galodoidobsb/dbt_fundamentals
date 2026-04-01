@@ -1,0 +1,20 @@
+models:
+
+  - name: stg_stripe__payments
+    description: One payment per row
+    columns:
+
+      - name: id
+        description: Primary key for payment transaction
+
+      - name: order_id
+        description: Foreign key referencing Jaffle Shop order id 
+
+      - name: payment_method
+        description: Payment method used for the transaction
+
+      - name: status
+        description: Status of the transaction. Will be converted to a table.
+
+      - name: amount
+        description: Payment amount in dollars
