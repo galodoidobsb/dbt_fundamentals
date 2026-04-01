@@ -12,6 +12,12 @@ sources:
           period: day
     tables:
       - name: customers
+        columns:
+          - name: id
+            data_tests:
+              - unique
+              - not_null
+
         # config:
         #   loaded_at_field: _etl_loaded_at
       - name: orders
