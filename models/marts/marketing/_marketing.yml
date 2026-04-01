@@ -1,0 +1,8 @@
+models:
+
+  - name: dim_customers
+    description: One customer per row including metrics, such as lifetime value and number of orders
+    columns:
+
+      - name: lifetime_value
+        description: Customer lifetime value, calculated as the sum of values from all valid transactions
