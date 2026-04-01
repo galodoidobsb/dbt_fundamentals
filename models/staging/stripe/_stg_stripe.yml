@@ -11,10 +11,10 @@ models:
         description: Foreign key referencing Jaffle Shop order id 
 
       - name: payment_method
-        description: Payment method used for the transaction
+        description: 'Payment method used for the transaction, can be one of the following: "credit_card", "bank_transfer", "gift_card" or "coupon"'
 
       - name: status
-        description: Status of the transaction. Will be converted to a table.
+        description: Status of the transaction, can be either "success" or "fail"
 
       - name: amount
         description: Payment amount in dollars
